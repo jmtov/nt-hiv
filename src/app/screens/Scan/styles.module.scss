@@ -1,0 +1,19 @@
+@import 'scss/animations';
+
+@import 'scss/colors';
+
+@import 'scss/media-queries';
+
+.video-container {
+  height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 30px 60px;
+  width: 100%;
+}
+
+.video-wrapper {
+  border-radius: 30px;
+  max-width: 500px;
+  width: 100%;
+}

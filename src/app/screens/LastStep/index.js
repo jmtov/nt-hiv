@@ -6,7 +6,7 @@ import Button from '~components/Button';
 
 import styles from './styles.module.scss';
 
-function PillDetail() {
+function LastStep() {
   return (
     <>
       <Navbar />
@@ -28,4 +28,4 @@ function PillDetail() {
   );
 }
 
-export default PillDetail;
+export default LastStep;

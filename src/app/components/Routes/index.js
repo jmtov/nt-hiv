@@ -16,6 +16,7 @@ const Pills = lazy(() => import('~screens/Pills'));
 const PillDetail = lazy(() => import('~screens/PillDetail'));
 const Organizations = lazy(() => import('~screens/Organizations'));
 const LastStep = lazy(() => import('~screens/LastStep'));
+const Scan = lazy(() => import('~screens/Scan'));
 
 function AppRoutes() {
   return (
@@ -23,6 +24,7 @@ function AppRoutes() {
       <div className={`column ${styles.container}`}>
         <Suspense>
           <Switch>
+            <AuthenticatedRoute isPublicRoute exact path={Routes.SCAN} component={Scan} />
             <AuthenticatedRoute isPublicRoute exact path={Routes.LAST_STEP} component={LastStep} />
             <AuthenticatedRoute isPublicRoute exact path={Routes.ORGANIZATIONS} component={Organizations} />
             <AuthenticatedRoute isPublicRoute exact path={Routes.PILL_DETAIL} component={PillDetail} />
