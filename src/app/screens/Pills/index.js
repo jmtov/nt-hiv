@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { push } from 'connected-react-router';
+import { useDispatch } from 'react-redux';
 
 import Button from '~components/Button';
 
@@ -8,10 +10,17 @@ import PillCard from '~components/PillCard';
 
 import SearchBar from '~components/SearchBar';
 
+import Routes from '~constants/routes';
+
 import { pills } from './constants';
 import styles from './styles.module.scss';
 
 function Pills() {
+  const dispatch = useDispatch();
+  const handleClick = useCallback(() => {
+    dispatch(push(Routes.PILL_DETAIL));
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -23,7 +32,9 @@ function Pills() {
             <PillCard key={pill.id} id={pill.id} name={pill.name} mg={pill.mg} img={pill.img} />
           ))}
         </div>
-        <Button className={`${styles.nextBtn} self-center recipient-btn full-width`}>Continuar</Button>
+        <Button className={`${styles.nextBtn} self-center recipient-btn full-width`} onClick={handleClick}>
+          Continuar
+        </Button>
       </div>
     </>
   );

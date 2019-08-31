@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { push } from 'connected-react-router';
+import { useDispatch } from 'react-redux';
 
 import Navbar from '~components/Navbar';
 
@@ -8,10 +10,17 @@ import Button from '~components/Button';
 
 import SearchBar from '~components/SearchBar';
 
+import Routes from '~constants/routes';
+
 import { organizations } from './constants';
 import styles from './styles.module.scss';
 
 function Organizations() {
+  const dispatch = useDispatch();
+  const handleClick = useCallback(() => {
+    dispatch(push(Routes.LAST_STEP));
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -29,7 +38,9 @@ function Organizations() {
             />
           ))}
         </div>
-        <Button className={`${styles.nextBtn} self-center recipient-btn full-width`}>Continuar</Button>
+        <Button className={`${styles.nextBtn} self-center recipient-btn full-width`} onClick={handleClick}>
+          Continuar
+        </Button>
       </div>
     </>
   );

@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import { push } from 'connected-react-router';
+import { useDispatch } from 'react-redux';
 
 import Navbar from '~components/Navbar';
 
@@ -8,12 +10,19 @@ import Checkbox from '~components/Checkbox';
 
 import Slider from '~components/Slider';
 
+import Routes from '~constants/routes';
+
 import PillNameAndImage from '~components/PillCard/components/PillNameAndImage';
 
 import styles from './styles.module.scss';
 
 function Pills() {
+  const dispatch = useDispatch();
   const [acceptedTerms, setAcceptedTerms] = useState(false);
+  const handleClick = useCallback(() => {
+    dispatch(push(Routes.ORGANIZATIONS));
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -49,7 +58,9 @@ function Pills() {
             </div>
           </div>
         </div>
-        <Button className={`${styles.nextBtn} self-center recipient-btn full-width`}>Continuar</Button>
+        <Button className={`${styles.nextBtn} self-center recipient-btn full-width`} onClick={handleClick}>
+          Continuar
+        </Button>
       </div>
     </>
   );

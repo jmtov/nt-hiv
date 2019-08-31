@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { push } from 'connected-react-router';
+import { useDispatch } from 'react-redux';
 
 import Navbar from '~components/Navbar';
 
 import Button from '~components/Button';
 
+import Routes from '~constants/routes';
+
 import styles from './styles.module.scss';
 
 function LastStep() {
+  const dispatch = useDispatch();
+  const handleClick = useCallback(() => {
+    dispatch(push(Routes.SCAN));
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -22,7 +31,9 @@ function LastStep() {
           </p>
         </div>
         <h2 className={`m-bottom-4 ${styles.subtitle}`}>Escanear acá</h2>
-        <Button className={`m-bottom-10 ${styles.scanBtn}`}>Scan Icon Here</Button>
+        <Button className={`m-bottom-10 ${styles.scanBtn}`} onClick={handleClick}>
+          Scan Icon Here
+        </Button>
       </div>
     </>
   );

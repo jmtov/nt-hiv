@@ -31,7 +31,7 @@ function AppRoutes() {
             <AuthenticatedRoute isPublicRoute exact path={Routes.ORGANIZATIONS} component={Organizations} />
             <AuthenticatedRoute isPublicRoute exact path={Routes.PILL_DETAIL} component={PillDetail} />
             <AuthenticatedRoute isPublicRoute exact path={Routes.PILLS} component={Pills} />
-            <AuthenticatedRoute isPublicRoute path={Routes.WELCOME} component={Welcome} />
+            <AuthenticatedRoute isPublicRoute path={Routes.HOME} component={Welcome} />
           </Switch>
         </Suspense>
       </div>
