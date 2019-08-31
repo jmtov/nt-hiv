@@ -1,3 +1,4 @@
+@import 'scss/animations';
 @import 'scss/colors';
 
 button {
@@ -7,6 +8,13 @@ button {
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
+  transition: opacity $transition-duration;
+  user-select: none;
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
 
 .donor-btn {

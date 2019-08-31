@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { func, number, string } from 'prop-types';
+import { bool, func, number, string } from 'prop-types';
 import cn from 'classnames';
 
 import Button from '~components/Button';
@@ -10,22 +10,13 @@ import PillNameAndImage from './components/PillNameAndImage';
 import styles from './styles.module.scss';
 
 class PillCard extends Component {
-  state = {
-    selected: false
-  };
-
-  handleClick = () => {
-    this.setState(prevState => ({
-      selected: !prevState.selected
-    }));
-    this.props.onSelect?.(this.props);
-  };
+  handleClick = () => this.props.onSelect(this.props);
 
   render() {
-    const { name, mg, img } = this.props;
-    const { selected } = this.state;
+    const { name, mg, img, selected, disabled } = this.props;
     return (
       <Button
+        disabled={disabled}
         className={cn('column center start', styles.card, { [styles.selected]: selected })}
         onClick={this.handleClick}
       >
@@ -38,9 +29,11 @@ class PillCard extends Component {
 }
 
 PillCard.propTypes = {
+  disabled: bool,
   img: string,
   mg: number,
   name: string,
+  selected: bool,
   onSelect: func
 };
 

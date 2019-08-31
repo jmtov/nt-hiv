@@ -1,13 +1,13 @@
 import React from 'react';
-import { func, string } from 'prop-types';
+import { bool, func, string } from 'prop-types';
 import cn from 'classnames';
 
 import { BUTTON_TYPES } from '~constants/buttons';
 
-function Button({ className, children, onClick, type }) {
+function Button({ className, children, disabled, onClick, type }) {
   return (
     // eslint-disable-next-line react/button-has-type
-    <button tabIndex={0} className={cn(className)} type={type} onClick={onClick}>
+    <button disabled={disabled} tabIndex={0} className={cn(className)} type={type} onClick={onClick}>
       {children}
     </button>
   );
@@ -15,6 +15,7 @@ function Button({ className, children, onClick, type }) {
 
 Button.propTypes = {
   className: string,
+  disabled: bool,
   type: string,
   onClick: func
 };

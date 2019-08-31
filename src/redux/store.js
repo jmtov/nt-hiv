@@ -2,6 +2,7 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import { reducer as form } from 'redux-form';
+import { fetchMiddleware } from 'redux-recompose';
 import thunk from 'redux-thunk';
 
 /*
@@ -9,6 +10,7 @@ import thunk from 'redux-thunk';
  * import AnalyticsMiddleware from '../services/AnalyticsService';
  */
 import { reducer as auth } from './Auth/reducer';
+import pills from './Pills/reducer';
 
 export const history = createBrowserHistory();
 
@@ -16,10 +18,11 @@ export const history = createBrowserHistory();
 const reducers = combineReducers({
   auth,
   form,
+  pills,
   router: connectRouter(history)
 });
 
-const middlewares = [thunk, routerMiddleware(history)];
+const middlewares = [thunk, routerMiddleware(history), fetchMiddleware];
 const enhancers = [];
 
 // TODO Add this if you need it.
