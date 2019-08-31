@@ -34,6 +34,11 @@
   width: 100%;
 }
 
+.img {
+  height: 80px;
+  padding: 10px;
+}
+
 .title {
   color: $gray;
   font-size: 18px;
@@ -42,6 +47,10 @@
 .component,
 .disclaimer {
   color: $gray;
+}
+
+.component {
+  text-transform: capitalize;
 }
 
 .disclaimer {

@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { push } from 'connected-react-router';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Navbar from '~components/Navbar';
 
@@ -18,6 +18,7 @@ import styles from './styles.module.scss';
 
 function Pills() {
   const dispatch = useDispatch();
+  const { currentPill = {} } = useSelector(state => state.pills);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const handleClick = useCallback(() => {
     dispatch(push(Routes.ORGANIZATIONS));
@@ -29,12 +30,14 @@ function Pills() {
       <div className={`column ${styles.container}`}>
         <div className={`column center middle ${styles.cardContainer}`}>
           <div className={`column center m-bottom-6 ${styles.card}`}>
-            <PillNameAndImage name="ATRIPLA" img="blah" />
+            <PillNameAndImage name={currentPill.name} img={currentPill.img} imgClassName={styles.img} />
             <div className={`column full-width m-bottom-4 ${styles.composition}`}>
               <h2 className={`m-bottom-2 ${styles.title}`}>Composición</h2>
-              <p className={`m-bottom-1 ${styles.component}`}>Efavirenz 600 mg</p>
-              <p className={`m-bottom-1 ${styles.component}`}>Emtricitabina 200 mg</p>
-              <p className={`m-bottom-1 ${styles.component}`}>Tenofovir 300 mg</p>
+              {currentPill.id.drugs.map(component => (
+                <p key={component.name} className={`m-bottom-1 ${styles.component}`}>
+                  {`${component.name} ${component.mg} mg`}
+                </p>
+              ))}
             </div>
             <div className={`column full-width m-bottom-2 ${styles.quantity}`}>
               <h2 className={`m-bottom-4 ${styles.title}`}>Cantidad de pastillas</h2>

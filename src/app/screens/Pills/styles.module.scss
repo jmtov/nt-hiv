@@ -34,10 +34,15 @@
   grid-gap: 20px;
   grid-auto-flow: column;
   align-content: center;
+  justify-content: flex-start;
   grid-template-rows: repeat(auto-fit, minmax(180px, 180px));
   overflow-x: auto;
   padding: 2px;
   height: 100%;
+}
+
+.img {
+  padding: 20px 0;
 }
 
 .group-title {
