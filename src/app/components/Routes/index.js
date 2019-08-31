@@ -11,9 +11,10 @@ import Suspense from '~components/Suspense';
 import AuthenticatedRoute from './components/AuthenticatedRoute';
 import styles from './styles.module.scss';
 
+const Welcome = lazy(() => import('~screens/Welcome'));
 const Pills = lazy(() => import('~screens/Pills'));
 const PillDetail = lazy(() => import('~screens/PillDetail'));
-const Welcome = lazy(() => import('~screens/Welcome'));
+const Organizations = lazy(() => import('~screens/Organizations'));
 
 function AppRoutes() {
   return (
@@ -21,6 +22,7 @@ function AppRoutes() {
       <div className={`column ${styles.container}`}>
         <Suspense>
           <Switch>
+            <AuthenticatedRoute isPublicRoute exact path={Routes.ORGANIZATIONS} component={Organizations} />
             <AuthenticatedRoute isPublicRoute exact path={Routes.PILL_DETAIL} component={PillDetail} />
             <AuthenticatedRoute isPublicRoute exact path={Routes.PILLS} component={Pills} />
             <AuthenticatedRoute isPublicRoute path={Routes.WELCOME} component={Welcome} />

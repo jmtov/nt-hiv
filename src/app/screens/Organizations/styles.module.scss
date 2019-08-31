@@ -1,0 +1,52 @@
+@import 'scss/media-queries';
+
+@import 'scss/colors';
+
+.container {
+  height: 100%;
+  overflow: auto;
+  max-width: 900px;
+  padding: 30px 60px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.input {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  border: 0;
+  padding: 25px;
+  padding-left: 70px;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.organizations {
+  display: grid;
+  grid-gap: 20px;
+  grid-auto-flow: column;
+  align-content: center;
+  grid-template-rows: repeat(auto-fit, minmax(210px, 210px));
+  overflow-x: auto;
+  padding: 2px;
+  height: 100%;
+}
+
+.group-title {
+  color: $medium-gray;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.next-btn {
+  max-width: 240px;
+  border-radius: 10px;
+  color: $white;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  padding: 18px 30px;
+}

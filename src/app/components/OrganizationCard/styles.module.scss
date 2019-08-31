@@ -1,0 +1,50 @@
+@import 'scss/animations';
+
+@import 'scss/colors';
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 0 2px 1px rgba(150, 150, 150, 0.1);
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+  transition: box-shadow $transition-duration;
+  text-overflow: ellipsis;
+  width: 180px;
+
+  .selected-indicator {
+    bottom: 16px;
+    right: 16px;
+    position: absolute;
+  }
+
+  &.selected {
+    box-shadow: 0 4px 10px -3px $transparent-black;
+  }
+}
+
+.name {
+  color: $gray;
+  font-size: 18px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.data-wrapper {
+  color: $gray;
+  text-align: left;
+
+  .title {
+    font-size: 14px;
+  }
+
+  .content {
+    font-size: 14px;
+  }
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+}

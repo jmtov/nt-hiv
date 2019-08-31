@@ -14,7 +14,7 @@ function Pills() {
     <>
       <Navbar />
       <div className={`column ${styles.container}`}>
-        <input className={`m-bottom-3 ${styles.input}`} placeholder="¿Qué medicamento estás buscando?" />
+        <input className={`m-bottom-6 ${styles.input}`} placeholder="¿Qué medicamento estás buscando?" />
         <h3 className={`m-bottom-6 ${styles.groupTitle}`}>Medicamentos más utilizados</h3>
         <div className={`m-bottom-6 ${styles.pills}`}>
           {pills.map(pill => (
