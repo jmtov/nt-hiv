@@ -1,0 +1,31 @@
+@import 'scss/animations';
+
+@import 'scss/colors';
+
+.checkbox {
+  background-color: $transparent-black;
+  border-radius: 7px;
+  height: 25px;
+  position: relative;
+  width: 25px;
+
+  &::before {
+    content: '';
+    background-color: $green;
+    border-radius: 7px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: $transition-duration;
+    width: 100%;
+  }
+
+  &.selected {
+
+    &::before {
+      transform: scale(0.7);
+    }
+  }
+}

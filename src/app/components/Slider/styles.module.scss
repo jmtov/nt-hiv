@@ -1,0 +1,49 @@
+@import 'scss/colors';
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+
+  .slider {
+    appearance: none;
+    background-color: $light-gray;
+    border-radius: 6px;
+    overflow: hidden;
+    outline: none;
+    width: 100%;
+  }
+
+  .slider::-webkit-slider-runnable-track {
+    appearance: none;
+    border-radius: 6px;
+    color: $purple;
+    height: 6px;
+    margin-top: -1px;
+    position: relative;
+  }
+
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    background: $purple;
+    border-radius: 20px;
+    box-shadow: -200px 0 0 200px $purple;
+    height: 6px;
+    width: 6px;
+  }
+}
+/** FF */
+
+.slider::-moz-range-progress {
+  background-color: $purple;
+}
+
+.slider::-moz-range-track {
+  background-color: $light-gray;
+}
+/* IE */
+
+.slider::-ms-fill-lower {
+  background-color: $purple;
+}
+
+.slider::-ms-fill-upper {
+  background-color: $light-gray;
+}

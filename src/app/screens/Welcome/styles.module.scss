@@ -5,7 +5,7 @@
 .container {
   height: 100%;
   justify-content: flex-end;
-  padding: 80px 100px;
+  padding: 60px 80px;
   overflow: auto;
 
   @media screen and (max-width: $small-device) {
@@ -37,7 +37,7 @@
   font-weight: 700;
   letter-spacing: -1px;
   min-width: 240px;
-  padding: 30px;
+  padding: 20px;
 
   @media screen and (max-width: $small-device) {
     margin-right: 0;

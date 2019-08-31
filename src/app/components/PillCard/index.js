@@ -4,6 +4,9 @@ import cn from 'classnames';
 
 import Button from '~components/Button';
 
+import Checkbox from '~components/Checkbox';
+
+import PillNameAndImage from './components/PillNameAndImage';
 import styles from './styles.module.scss';
 
 class PillCard extends Component {
@@ -23,14 +26,12 @@ class PillCard extends Component {
     const { selected } = this.state;
     return (
       <Button
-        className={cn('column', styles.card, { [styles.selected]: selected })}
+        className={cn('column center start', styles.card, { [styles.selected]: selected })}
         onClick={this.handleClick}
       >
-        <h2 className={`full-width ${styles.name}`}>{name}</h2>
-        <hr className={`separator full-width ${styles.separator} m-bottom-2`} />
-        <img alt={name} src={img} className={`m-bottom-2 ${styles.img} full-width`} />
-        <span className={styles.mg}>{`${mg} mg`}</span>
-        <div className={styles.selectedIndicator} />
+        <PillNameAndImage name={name} img={img} />
+        {mg && <span className={styles.mg}>{`${mg} mg`}</span>}
+        <Checkbox className={styles.selectedIndicator} selected={selected} />
       </Button>
     );
   }

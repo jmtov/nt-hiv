@@ -7,13 +7,14 @@ button {
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
-  text-transform: uppercase;
 }
 
 .donor-btn {
   background-color: $pink;
+  text-transform: uppercase;
 }
 
 .recipient-btn {
   background-color: $purple;
+  text-transform: uppercase;
 }

@@ -1,0 +1,17 @@
+@import 'scss/colors';
+
+.name {
+  color: $gray;
+  font-size: 18px;
+  letter-spacing: 0;
+  padding: 10px;
+}
+
+.img {
+  min-height: 60px;
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+}

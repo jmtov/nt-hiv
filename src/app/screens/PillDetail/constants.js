@@ -5,8 +5,7 @@ export const pills = [
   },
   {
     id: 2,
-    name: 'genvoya',
-    mg: 200
+    name: 'genvoya'
   },
   {
     id: 3,

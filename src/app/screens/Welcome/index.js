@@ -8,8 +8,8 @@ function Welcome() {
   return (
     <div className={`column ${styles.container}`}>
       <div className="item-0 column m-bottom-8">
-        <h1 className={styles.appTitle}>¡Hola!</h1>
-        <h2 className={`${styles.subtitle} m-bottom-4`}>Queremos darte una mano ;)</h2>
+        <h1 className={`m-bottom-3 ${styles.appTitle}`}>¡Hola!</h1>
+        <h2 className={`m-bottom-3 ${styles.subtitle}`}>Queremos darte una mano ;)</h2>
         <h2 className={styles.subtitle}>¿Cómo podemos ayudarte hoy?</h2>
       </div>
       <hr className="item-0 separator full-width m-bottom-10" />

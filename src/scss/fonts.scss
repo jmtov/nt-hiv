@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,700i,800&display=swap');
 
-h2 {
-  line-height: 1.1;
+h1,
+h2,
+p,
+a {
+  line-height: 1.2;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+p {
+  font-size: 15px;
 }
