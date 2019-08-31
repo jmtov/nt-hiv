@@ -1,0 +1,33 @@
+@import 'scss/colors';
+
+.input-container {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  border: 0;
+}
+
+.icon-container {
+  height: 60px;
+  object-fit: contain;
+  padding: 15px;
+  user-select: none;
+  width: 60px;
+}
+
+.icon {
+  pointer-events: none;
+  transform: translate(4px, 5px);
+  width: 100%;
+}
+
+.input {
+  appearance: none;
+  background: none;
+  border: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  height: 100%;
+  outline: none;
+  letter-spacing: 0;
+}

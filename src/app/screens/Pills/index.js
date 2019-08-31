@@ -1,10 +1,12 @@
 import React from 'react';
 
+import Button from '~components/Button';
+
 import Navbar from '~components/Navbar';
 
 import PillCard from '~components/PillCard';
 
-import Button from '~components/Button';
+import SearchBar from '~components/SearchBar';
 
 import { pills } from './constants';
 import styles from './styles.module.scss';
@@ -14,7 +16,7 @@ function Pills() {
     <>
       <Navbar />
       <div className={`column ${styles.container}`}>
-        <input className={`m-bottom-6 ${styles.input}`} placeholder="¿Qué medicamento estás buscando?" />
+        <SearchBar className="m-bottom-6" placeholder="¿Qué medicamento estás buscando?" />
         <h3 className={`m-bottom-6 ${styles.groupTitle}`}>Medicamentos más utilizados</h3>
         <div className={`m-bottom-6 ${styles.pills}`}>
           {pills.map(pill => (

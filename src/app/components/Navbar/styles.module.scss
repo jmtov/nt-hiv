@@ -2,5 +2,18 @@
 
 .navbar {
   background-color: $purple;
-  padding: 25px;
+}
+
+.back-btn {
+  background: none;
+  height: 60px;
+  object-fit: contain;
+  padding: 15px;
+  user-select: none;
+  width: 60px;
+}
+
+.icon {
+  pointer-events: none;
+  width: 100%;
 }
