@@ -7,7 +7,12 @@ const getPills = (name = '') =>
       .startAt(name)
       .endAt(`${name}\uf8ff`)
       .get()
-      .then(pills => res({ ok: true, data: pills.docs.map(d => d.data()) }));
+      .then(pills =>
+        res({
+          ok: true,
+          data: pills.docs.map(d => Object.assign(d.data(), { id: d.id }))
+        })
+      );
   });
 
 export default {
