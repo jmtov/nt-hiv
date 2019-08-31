@@ -37,7 +37,7 @@ function Pills() {
   }, []);
 
   const handleSelect = useCallback(pill => {
-    if (currentPill?.id === pill?.id) {
+    if (currentPill?.name === pill?.name) {
       setCurrentPill(null);
     } else {
       setCurrentPill(pill);
@@ -58,14 +58,14 @@ function Pills() {
           {!!pills.length &&
             pills.map(pill => (
               <PillCard
-                key={pill.id}
-                id={pill.id}
+                key={pill}
+                id={pill}
                 name={pill.name}
                 mg={pill.mg}
-                img={pill.img}
+                img={pill.image_url}
                 onSelect={handleSelect}
-                disabled={currentPill?.id && currentPill.id !== pill.id}
-                selected={pill.id === currentPill?.id}
+                disabled={currentPill?.name && currentPill.name !== pill.name}
+                selected={pill.name === currentPill?.name}
               />
             ))}
         </div>

@@ -1,9 +1,18 @@
-import { pills } from '~constants/MOCK_DATA';
+import { db } from '~config/firebase';
 
-const getPills = name =>
-  new Promise(resolve => {
-    const newPills = name ? pills.filter(pill => pill.name.includes(name)) : pills;
-    resolve({ ok: true, data: newPills });
+const getPills = (name = '') =>
+  new Promise(res => {
+    db.collection('pills')
+      .orderBy('name')
+      .startAt(name)
+      .endAt(`${name}\uf8ff`)
+      .get()
+      .then(pills =>
+        res({
+          ok: true,
+          data: pills.docs.map(d => Object.assign(d.data(), { id: d.id }))
+        })
+      );
   });
 
 export default {
