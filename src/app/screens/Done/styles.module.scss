@@ -1,0 +1,50 @@
+@import 'scss/animations';
+
+@import 'scss/colors';
+
+@import 'scss/media-queries';
+
+.container {
+  background-color: $purple;
+  height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 60px 60px 30px;
+  width: 100%;
+}
+
+.texts {
+  flex-grow: 1;
+  max-width: 600px;
+}
+
+.title,
+.subtitle {
+  color: $dark-purple;
+}
+
+.title {
+  font-size: 38px;
+}
+
+.subtitle {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.text {
+  color: $white;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.done-btn {
+  background-color: $white;
+  border-radius: 10px;
+  color: $purple;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  max-width: 300px;
+  padding: 18px 60px;
+}
