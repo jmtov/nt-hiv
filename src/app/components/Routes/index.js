@@ -11,8 +11,8 @@ import Suspense from '~components/Suspense';
 import AuthenticatedRoute from './components/AuthenticatedRoute';
 import styles from './styles.module.scss';
 
-const Welcome = lazy(() => import('../../screens/Welcome'));
-const Login = lazy(() => import('../../screens/Login'));
+const Pills = lazy(() => import('~screens/Pills'));
+const Welcome = lazy(() => import('~screens/Welcome'));
 
 function AppRoutes() {
   return (
@@ -20,8 +20,8 @@ function AppRoutes() {
       <div className={`column ${styles.container}`}>
         <Suspense>
           <Switch>
-            <AuthenticatedRoute isPublicRoute exact path={Routes.WELCOME} component={Welcome} />
-            <AuthenticatedRoute isPublicRoute exact path={Routes.LOGIN} component={Login} />
+            <AuthenticatedRoute isPublicRoute exact path={Routes.PILLS} component={Pills} />
+            <AuthenticatedRoute isPublicRoute path={Routes.WELCOME} component={Welcome} />
           </Switch>
         </Suspense>
       </div>

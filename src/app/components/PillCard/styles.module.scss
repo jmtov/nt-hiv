@@ -1,0 +1,74 @@
+@import 'scss/animations';
+
+@import 'scss/colors';
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 0 2px 1px rgba(150, 150, 150, 0.1);
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+  transition: box-shadow $transition-duration;
+  text-overflow: ellipsis;
+  width: 180px;
+
+  .selected-indicator {
+    background-color: $transparent-black;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    bottom: 16px;
+    right: 16px;
+    position: absolute;
+
+    &::before {
+      content: '';
+      background-color: $green;
+      border-radius: 7px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: $transition-duration;
+      transform: scale(0);
+    }
+  }
+
+  &.selected {
+    box-shadow: 0 4px 10px -3px $transparent-black;
+
+    .selected-indicator {
+
+      &::before {
+        transform: scale(0.7);
+      }
+    }
+  }
+}
+
+.name {
+  color: $gray;
+  letter-spacing: 0;
+  padding: 10px;
+}
+
+.img {
+  min-height: 60px;
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+}
+
+.mg {
+  background-color: rgba($green, 0.2);
+  border-radius: 10px;
+  color: $dark-green;
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: 0;
+  padding: 5px 10px;
+}

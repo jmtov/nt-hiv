@@ -1,15 +1,20 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { func, string } from 'prop-types';
 import cn from 'classnames';
 
 import { BUTTON_TYPES } from '~constants/buttons';
 
 import styles from './styles.module.scss';
 
-function Button({ className, children, type }) {
+function Button({ className, children, onClick, type }) {
   return (
     // eslint-disable-next-line react/button-has-type
-    <button tabIndex={0} className={cn('row center middle', styles.button, className)} type={type}>
+    <button
+      tabIndex={0}
+      className={cn('center middle', styles.button, className)}
+      type={type}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
@@ -17,7 +22,8 @@ function Button({ className, children, type }) {
 
 Button.propTypes = {
   className: string,
-  type: string
+  type: string,
+  onClick: func
 };
 
 Button.defaultProps = {
