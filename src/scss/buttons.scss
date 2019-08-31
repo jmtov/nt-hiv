@@ -1,0 +1,19 @@
+@import 'scss/colors';
+
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.donor-btn {
+  background-color: $pink;
+}
+
+.recipient-btn {
+  background-color: $purple;
+}

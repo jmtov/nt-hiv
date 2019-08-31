@@ -2,23 +2,25 @@ import React, { lazy } from 'react';
 import { ConnectedRouter } from 'connected-react-router';
 import { Switch } from 'react-router-dom';
 
-import { history } from '../../../redux/store';
-import Suspense from '../Suspense';
-import Routes from '../../../constants/routes';
+import { history } from '~redux/store';
+
+import Routes from '~constants/routes';
+
+import Suspense from '~components/Suspense';
 
 import AuthenticatedRoute from './components/AuthenticatedRoute';
-import styles from './styles.scss';
+import styles from './styles.module.scss';
 
-const Home = lazy(() => import('../../screens/Dashboard'));
+const Welcome = lazy(() => import('../../screens/Welcome'));
 const Login = lazy(() => import('../../screens/Login'));
 
 function AppRoutes() {
   return (
     <ConnectedRouter history={history}>
-      <div className={styles.container}>
+      <div className={`column ${styles.container}`}>
         <Suspense>
           <Switch>
-            <AuthenticatedRoute isPrivateRoute exact path={Routes.HOME} component={Home} />
+            <AuthenticatedRoute isPublicRoute exact path={Routes.WELCOME} component={Welcome} />
             <AuthenticatedRoute isPublicRoute exact path={Routes.LOGIN} component={Login} />
           </Switch>
         </Suspense>

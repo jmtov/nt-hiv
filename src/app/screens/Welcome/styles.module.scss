@@ -1,0 +1,46 @@
+@import 'scss/media-queries';
+
+@import 'scss/colors';
+
+.container {
+  height: 100%;
+  justify-content: flex-end;
+  padding: 80px 100px;
+  overflow: auto;
+
+  @media screen and (max-width: $small-device) {
+    justify-content: flex-start;
+  }
+}
+
+.app-title {
+  color: $purple;
+  font-family: 'Open Sans';
+  font-size: 70px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: $gray;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.actions {
+  flex-wrap: wrap;
+}
+
+.welcome-button {
+  color: $white;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  min-width: 240px;
+  padding: 30px;
+
+  @media screen and (max-width: $small-device) {
+    margin-right: 0;
+    width: 100%;
+  }
+}
