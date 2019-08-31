@@ -1,8 +1,12 @@
-@import 'scss/media-queries';
+@import 'scss/animations';
 
 @import 'scss/colors';
 
+@import 'scss/media-queries';
+
 .container {
+
+  @extend %appear;
   height: 100%;
   overflow: auto;
   max-width: 900px;
@@ -24,6 +28,8 @@
 }
 
 .pills {
+
+  @extend %appear;
   display: grid;
   grid-gap: 20px;
   grid-auto-flow: column;

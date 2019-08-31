@@ -2,7 +2,7 @@ import React from 'react';
 import { func, string } from 'prop-types';
 import cn from 'classnames';
 
-import searchIcon from '../../assets/icon-search.png';
+import searchIcon from '~assets/icon-search.png';
 
 import styles from './styles.module.scss';
 

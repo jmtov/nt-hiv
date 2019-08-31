@@ -1,2 +1,22 @@
 $transition-duration: 200ms;
 $transition-function: cubic-bezier(0.29, 0.68, 0.33, 0.95);
+$animation-delay: 200ms;
+
+%appear {
+  animation-name: appear;
+  animation-duration: $transition-duration;
+  animation-fill-mode: both;
+}
+
+@keyframes appear {
+
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

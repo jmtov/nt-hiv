@@ -2,6 +2,8 @@ import React, { useCallback } from 'react';
 import { push } from 'connected-react-router';
 import { useDispatch } from 'react-redux';
 
+import cameraIcon from '~assets/icon-camera.png';
+
 import Navbar from '~components/Navbar';
 
 import Button from '~components/Button';
@@ -32,7 +34,7 @@ function LastStep() {
         </div>
         <h2 className={`m-bottom-4 ${styles.subtitle}`}>Escanear acá</h2>
         <Button className={`m-bottom-10 ${styles.scanBtn}`} onClick={handleClick}>
-          Scan Icon Here
+          <img alt="appLogo" src={cameraIcon} className={styles.icon} />
         </Button>
       </div>
     </>

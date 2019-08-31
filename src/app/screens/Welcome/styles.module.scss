@@ -1,8 +1,12 @@
-@import 'scss/media-queries';
+@import 'scss/animations';
 
 @import 'scss/colors';
 
+@import 'scss/media-queries';
+
 .container {
+
+  @extend %appear;
   height: 100%;
   justify-content: flex-end;
   padding: 60px 80px;

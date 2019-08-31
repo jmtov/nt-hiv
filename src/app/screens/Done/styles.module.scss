@@ -5,6 +5,8 @@
 @import 'scss/media-queries';
 
 .container {
+
+  @extend %appear;
   background-color: $purple;
   height: 100%;
   margin: 0 auto;
@@ -39,6 +41,9 @@
 }
 
 .done-btn {
+
+  @extend %appear;
+  animation-delay: $animation-delay;
   background-color: $white;
   border-radius: 10px;
   color: $purple;

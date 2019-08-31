@@ -5,6 +5,8 @@
 @import 'scss/media-queries';
 
 .video-container {
+
+  @extend %appear;
   height: 100%;
   margin: 0 auto;
   overflow: auto;
@@ -13,6 +15,9 @@
 }
 
 .video-wrapper {
+
+  @extend %appear;
+  animation-delay: $animation-delay;
   border-radius: 30px;
   max-width: 500px;
   width: 100%;

@@ -5,6 +5,8 @@
 @import 'scss/media-queries';
 
 .container {
+
+  @extend %appear;
   height: 100%;
   margin: 0 auto;
   overflow: auto;
@@ -45,4 +47,10 @@
   flex-shrink: 0;
   height: 200px;
   width: 200px;
+}
+
+.icon {
+  pointer-events: none;
+  user-select: none;
+  width: 60%;
 }
