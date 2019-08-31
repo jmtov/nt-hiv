@@ -1,5 +1,7 @@
 @import '~wolox-equalizer/equalizer';
 
+@import 'fonts';
+
 @import 'layout';
 
 @import 'margins';
@@ -11,11 +13,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, 'Droid Sans', sans-serif;
+  font-family: 'Open Sans', Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
